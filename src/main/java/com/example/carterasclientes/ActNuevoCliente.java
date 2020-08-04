@@ -63,10 +63,10 @@ public class ActNuevoCliente extends AppCompatActivity {
                         conexion = datosOpenHelper.getWritableDatabase();
 
                         ContentValues values = new ContentValues();
-                        values.put(FeedReaderClient.FeedEntry.COLUMN_NAME, edtNombre.getText().toString().trim());
-                        values.put(FeedReaderClient.FeedEntry.COLUMN_ADDRESS, edtDireccion.getText().toString().trim());
+                        values.put(FeedReaderClient.FeedEntry.COLUMN_NOMBRE, edtNombre.getText().toString().trim());
+                        values.put(FeedReaderClient.FeedEntry.COLUMN_DIRECCION, edtDireccion.getText().toString().trim());
                         values.put(FeedReaderClient.FeedEntry.COLUMN_EMAIL, edtEmail.getText().toString().trim());
-                        values.put(FeedReaderClient.FeedEntry.COLUMN_MOBILE, edtTelefono.getText().toString().trim());
+                        values.put(FeedReaderClient.FeedEntry.COLUMN_TELEFONO, edtTelefono.getText().toString().trim());
 
                         conexion.insert(FeedReaderClient.FeedEntry.TABLE_NAME, null, values);
                         conexion.close();

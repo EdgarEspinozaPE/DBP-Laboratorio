@@ -13,11 +13,12 @@ public class DatosOpenHelper extends SQLiteOpenHelper {
 
     private static final String SQL_CREATE_ENTRIES  =
             "CREATE TABLE IF NOT EXISTS " + FeedReaderClient.FeedEntry.TABLE_NAME + " (" +
-                    FeedReaderClient.FeedEntry.COLUMN_NAME + " VARCHAR(250), " +
-                    FeedReaderClient.FeedEntry.COLUMN_ADDRESS + " VARCHAR(250), " +
+                    FeedReaderClient.FeedEntry.COLUMN_NOMBRE+ " VARCHAR(250), " +
+                    FeedReaderClient.FeedEntry.COLUMN_DIRECCION + " VARCHAR(250), " +
                     FeedReaderClient.FeedEntry.COLUMN_EMAIL + " VARCHAR(200), " +
-                    FeedReaderClient.FeedEntry.COLUMN_MOBILE + " VARCHAR(20))";
-
+                    FeedReaderClient.FeedEntry.COLUMN_TELEFONO + " VARCHAR(20))";
+    private static final String SQL_DELETE_ENTRIES =
+            "DROP TABLE IF EXISTS " + FeedReaderClient.FeedEntry.TABLE_NAME;
     public DatosOpenHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -29,6 +30,7 @@ public class DatosOpenHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int il) {
-
+        sqLiteDatabase.execSQL(SQL_DELETE_ENTRIES);
+        onCreate(sqLiteDatabase);
     }
 }

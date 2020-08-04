@@ -6,10 +6,10 @@ public final class FeedReaderClient {
     private FeedReaderClient() {}
 
     public static class FeedEntry implements BaseColumns {
-        public static final String TABLE_NAME = "CLIENTE";
-        public static final String COLUMN_NAME = "NOMBRE";
-        public static final String COLUMN_ADDRESS = "DIRECCION";
-        public static final String COLUMN_EMAIL = "EMAIL";
-        public static final String COLUMN_MOBILE = "TELEFONO";
+        public static final String TABLE_NAME = "cliente";
+        public static final String COLUMN_NOMBRE = "nombre";
+        public static final String COLUMN_DIRECCION = "direccion";
+        public static final String COLUMN_EMAIL = "email";
+        public static final String COLUMN_TELEFONO = "telefono";
     }
 }

@@ -61,10 +61,8 @@ public class ActMain extends AppCompatActivity {
             conexion = datosOpenHelper.getWritableDatabase();
 
             String[] projection = {
-                    FeedReaderClient.FeedEntry.COLUMN_NAME,
-                    //FeedReaderClient.FeedEntry.COLUMN_ADDRESS,
-                    //FeedReaderClient.FeedEntry.COLUMN_EMAIL,
-                    FeedReaderClient.FeedEntry.COLUMN_MOBILE
+                    FeedReaderClient.FeedEntry.COLUMN_NOMBRE,
+                    FeedReaderClient.FeedEntry.COLUMN_TELEFONO
             };
 
             Cursor resultado = conexion.query(
@@ -80,8 +78,8 @@ public class ActMain extends AppCompatActivity {
             if (resultado.getCount() > 0) {
                 resultado.moveToFirst();
                 do {
-                    String cliente = resultado.getString(resultado.getColumnIndex(FeedReaderClient.FeedEntry.COLUMN_NAME)) +
-                            ": " + resultado.getString(resultado.getColumnIndex(FeedReaderClient.FeedEntry.COLUMN_MOBILE));
+                    String cliente = resultado.getString(resultado.getColumnIndex(FeedReaderClient.FeedEntry.COLUMN_NOMBRE)) +
+                            ": " + resultado.getString(resultado.getColumnIndex(FeedReaderClient.FeedEntry.COLUMN_TELEFONO));
                     clientes.add(cliente);
                 } while (resultado.moveToNext());
                 resultado.close();
@@ -99,7 +97,8 @@ public class ActMain extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
         actualizar();
-        //super.onActivityResult(requestCode, resultCode, data);
+
     }
 }
