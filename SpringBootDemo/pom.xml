@@ -14,7 +14,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven-compiler-plugin.version>3.6.1</maven-compiler-plugin.version>
 		<maven-surefire-plugin.version>2.19</maven-surefire-plugin.version>
-		<spring-boot.version>1.5.2.RELEASE</spring-boot.version>
+		<spring-boot.version>2.5.12</spring-boot.version>
 		<spring-jdbc.version>4.3.7.RELEASE</spring-jdbc.version>
 		<junit.platform.version>1.0.0-M4</junit.platform.version>
 		<junit.jupiter.version>5.0.0-M4</junit.jupiter.version>
